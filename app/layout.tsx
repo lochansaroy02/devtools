@@ -37,9 +37,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Sidebar />
-          {/* ml-0 for mobile, ml-64 for desktop.
-              pt-14 for mobile header, pt-0 for desktop.
-          */}
           <main className="w-full min-h-screen transition-all duration-300 md:ml-64 pt-14 md:pt-0">
             {children}
           </main>

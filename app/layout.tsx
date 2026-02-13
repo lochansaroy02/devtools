@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex antialiased relative bg-white dark:bg-zinc-950`}
+        className={`${geistSans.variable} ${geistMono.variable} flex antialiased bg-white dark:bg-zinc-950`}
       >
         <ThemeProvider
           attribute="class"
@@ -37,10 +37,13 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Sidebar />
-          <main className="w-full ml-64 min-h-screen">
+          {/* ml-0 for mobile, ml-64 for desktop.
+              pt-14 for mobile header, pt-0 for desktop.
+          */}
+          <main className="w-full min-h-screen transition-all duration-300 md:ml-64 pt-14 md:pt-0">
             {children}
           </main>
-          <Toaster />
+          <Toaster position="bottom-right" />
         </ThemeProvider>
       </body>
     </html>
